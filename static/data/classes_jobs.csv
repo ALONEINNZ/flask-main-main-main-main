@@ -1,0 +1,14 @@
+id,class_name,years,is_mandatory,prerequisites,job
+63,Accounting,12,no,L2 Accounting,Teacher
+63,Accounting,12,no,L2 Accounting,Data Analyst
+63,Accounting,12,no,L2 Accounting,Accountant
+63,Accounting,12,no,L2 Accounting,Scientist
+11,Art,9,no,,Teacher
+11,Art,9,no,,Graphic Designer
+11,Art,9,no,,Web Developer
+12,Art,10,no,,Teacher
+12,Art,10,no,,Graphic Designer
+12,Art,10,no,,Web Developer
+114,Art,11,no,,Teacher
+114,Art,11,no,,Graphic Designer
+114,Art,11,no,,Web Developer

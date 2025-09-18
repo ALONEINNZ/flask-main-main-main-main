@@ -1,0 +1,16 @@
+Course_Name,Year,Is_Mandatory,Required_Classes
+English,9-13,True,
+Mathematics,9-13,True,
+Science,9-11,True,
+Biology,12-13,False,Science
+Chemistry,12-13,False,Science
+Physics,12-13,False,"Science, Mathematics"
+History,11-13,False,
+Geography,11-13,False,
+Digital Technologies,9-13,False,Mathematics
+Design & Visual Communication,9-13,False,
+Physical Education,9-13,False,
+Health,9-10,True,
+Music,9-13,False,
+Drama,9-13,False,
+Art,9-13,False,

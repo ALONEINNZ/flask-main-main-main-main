@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subject Selection</title>
+
+    <!-- Updated Font Awesome to version 6.5.0 -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> -->
+
+    <style>
+        html,
+        body {
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #062627;
+            z-index: 9999;
+        }
+    </style>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <div id="preloader"></div>
+
+    <header>
+        <div class="header-title">
+            {{ header }}
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li class="dropdown">
+                    <button><i class="fa-solid fa-house"></i> Home <i class="fa-solid fa-caret-down"></i></button>
+                    <div class="content">
+                        <a href="/">Home</a>
+                        <a href="/account">Account</a>
+                        <a href="/logout">Logout</a>
+                    </div>
+                </li>
+                <li class="subject_selection">
+                    <a class="nav-btn" href="/subject"><i class="fa-solid fa-school"></i> Subject Selection</a>
+
+                </li>
+            </ul>
+        </nav>
+        <div class="header-account">
+            <img src="{{ url_for('static', filename=( 'images/' ~ session.pfp if session.pfp else 'default_pfp.png' )) }}"
+                class="pfp" alt="Profile Picture">
+            <span class="account-username">{{ session.username }}</span>
+        </div>
+    </header>
+
+    <main>{% block content %}{% endblock %}</main>
+
+    <script>
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('preloader');
+            if (loader) loader.style.display = 'none';
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const dropdownBtn = document.querySelector('.dropdown > button');
+            const dropdownContent = document.querySelector('.dropdown .content');
+            dropdownBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+            });
+            // Optional: close dropdown when clicking outside
+            document.addEventListener('click', function (e) {
+                if (!dropdownBtn.contains(e.target) && !dropdownContent.contains(e.target)) {
+                    dropdownContent.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

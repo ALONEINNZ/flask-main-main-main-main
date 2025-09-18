@@ -1,0 +1,244 @@
+class_id,job_id
+63,Teacher
+63,Accountant
+11,Teacher
+11,Graphic Designer
+11,Web Developer
+12,Teacher
+12,Graphic Designer
+12,Web Developer
+114,Teacher
+114,Graphic Designer
+114,Web Developer
+115,Teacher
+115,Graphic Designer
+115,Web Developer
+116,Teacher
+116,Graphic Designer
+116,Web Developer
+81,Teacher
+81,Graphic Designer
+81,Web Developer
+59,Registered Nurse
+59,Teacher
+59,Pharmacist
+59,Scientist
+87,Registered Nurse
+87,Teacher
+87,Pharmacist
+87,Scientist
+75,Software Developer
+75,Registered Nurse
+75,Electrician
+75,Chef
+75,Civil Engineer
+75,Police Officer
+75,Mechanical Engineer
+47,Teacher
+47,Data Analyst
+50,Musician
+50,Teacher
+60,Scientist
+60,Pharmacist
+60,Chemist
+88,Scientist
+88,Pharmacist
+88,Chemist
+29,Teacher
+29,Translator
+30,Teacher
+30,Translator
+44,Accountant
+44,Entrepreneur
+65,Teacher
+65,Writer
+65,Editor
+51,Musician
+51,Teacher
+13,Dancer
+13,Choreographer
+13,Teacher
+14,Dancer
+14,Choreographer
+14,Teacher
+48,Dancer
+48,Choreographer
+48,Teacher
+79,Dancer
+79,Choreographer
+79,Teacher
+46,Photographer
+46,Graphic Designer
+46,Teacher
+99,Graphic Designer
+99,Illustrator
+99,Teacher
+100,Graphic Designer
+100,Illustrator
+100,Teacher
+101,Graphic Designer
+101,Illustrator
+101,Teacher
+102,Graphic Designer
+102,Illustrator
+102,Teacher
+103,Graphic Designer
+103,Illustrator
+103,Teacher
+19,Graphic Designer
+19,Illustrator
+19,Teacher
+20,Graphic Designer
+20,Illustrator
+20,Teacher
+72,Graphic Designer
+72,Illustrator
+72,Teacher
+21,Software Developer
+21,Data Analyst
+22,Software Developer
+22,Data Analyst
+96,Software Developer
+96,Data Analyst
+97,Software Developer
+97,Data Analyst
+98,Software Developer
+98,Data Analyst
+15,Actor
+15,Director
+15,Teacher
+16,Actor
+16,Director
+16,Teacher
+49,Actor
+49,Director
+49,Teacher
+113,Actor
+113,Director
+113,Teacher
+80,Actor
+80,Director
+80,Teacher
+23,Engineer
+23,Technician
+23,Programmer
+24,Engineer
+24,Technician
+24,Programmer
+52,Engineer
+52,Technician
+52,Programmer
+70,Engineer
+70,Architect
+82,Teacher
+82,Writer
+82,Editor
+2,Teacher
+2,Writer
+2,Editor
+43,Teacher
+43,Writer
+43,Editor
+83,Teacher
+83,Writer
+83,Editor
+84,Teacher
+84,Writer
+84,Editor
+66,Teacher
+66,Writer
+66,Editor
+55,Fashion Designer
+55,Textile Artist
+73,Dietitian
+73,Chef
+73,Nutritionist
+25,Chef
+25,Nutritionist
+25,Food Scientist
+26,Chef
+26,Nutritionist
+26,Food Scientist
+53,Chef
+53,Nutritionist
+53,Food Scientist
+31,Teacher
+31,Translator
+32,Teacher
+32,Translator
+62,Scientist
+62,Teacher
+62,Pharmacist
+93,Teacher
+93,Geographer
+93,Urban Planner
+94,Teacher
+94,Geographer
+94,Urban Planner
+95,Teacher
+95,Geographer
+95,Urban Planner
+33,Teacher
+33,Translator
+34,Teacher
+34,Translator
+108,Nurse
+108,Health Educator
+109,Nurse
+109,Health Educator
+68,Nurse
+68,Health Educator
+9,PE Teacher
+9,Coach
+10,PE Teacher
+10,Coach
+90,Teacher
+90,Historian
+91,Teacher
+91,Historian
+92,Teacher
+92,Historian
+54,Chef
+54,Hospitality Manager
+35,Teacher
+35,Translator
+36,Teacher
+36,Translator
+3,Mathematician
+3,Teacher
+3,Data Analyst
+4,Mathematician
+4,Teacher
+4,Data Analyst
+41,Mathematician
+41,Teacher
+41,Data Analyst
+85,Mathematician
+85,Teacher
+85,Data Analyst
+86,Mathematician
+86,Teacher
+86,Data Analyst
+64,Media Analyst
+64,Journalist
+27,Engineer
+27,Designer
+27,Technician
+28,Engineer
+28,Designer
+28,Technician
+17,Musician
+17,Teacher
+18,Musician
+18,Teacher
+110,Musician
+110,Teacher
+111,Musician
+111,Teacher
+112,Musician
+112,Teacher
+77,Guide
+77,Trainer
+74,Musician
+74,Performer
+104,

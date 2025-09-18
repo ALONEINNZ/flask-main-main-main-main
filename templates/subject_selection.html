@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subject Selection</title>
+    <link rel="stylesheet" href="/static/style.css">    
+</head>
+<body>
+    <header>
+        <div class="header-title">Subject Selection</div>
+        <a href="/" class="nav-btn home-btn" style="position:absolute;left:2rem;top:1.5rem;padding:0.6rem 1.5rem;border-radius:0.7rem;background:#1bc47d;color:#222;font-weight:600;text-decoration:none;box-shadow:0 2px 8px rgba(27,196,125,0.18);">Home</a>
+    </header>
+
+    <main class="main-content subject-selection-main">
+        <div class="search-container">
+            <div class="search-row">
+                <input type="text" id="searchInput" placeholder="Search for a job or class..." class="search-bar" autocomplete="off">
+                <button class="search-button" onclick="handleSearch()">Search</button>
+            </div>
+            <ul id="suggestions"></ul>
+            <div id="searchResults"></div>
+            <div id="infoBox"></div>
+        </div>
+
+        {% if selected_job %}
+        <div class="results-title">Job: <span class="results-highlight">{{ selected_job.name }}</span></div>
+        <div class="results-subtitle">Classes required for this job:</div>
+        <ul class="results-list-ul">
+            {% for c in classes %}
+            <li class="results-list-item">
+                <a href="/subject/{{ c.id }}" class="results-class-name">{{ c.name }}</a>
+                <span class="results-class-year">(Year {{ c.year }})</span>
+                <span class="results-class-status {% if c.is_mandatory %}mandatory{% else %}optional{% endif %}">
+                    {{ 'Mandatory' if c.is_mandatory else 'Optional' }}
+                </span>
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+        {% if selected_class %}
+        <div class="results-title">Class: <span class="results-highlight">{{ selected_class.name }}</span> <span class="results-class-year">(Year {{ selected_class.year }})</span></div>
+        <div class="results-subtitle">Jobs available with this class:</div>
+        <ul class="results-list-ul">
+            {% for j in jobs %}
+            <li class="results-list-item results-job-item">
+                <a href="/subject/job/{{ j.id }}" class="results-class-name">{{ j.name }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </main>
+
+    <div id="selectedClassBox"
+        style="position:fixed;top:20px;left:20px;z-index:999;background:#fff;color:#222;padding:1rem 1.5rem;border-radius:1rem;box-shadow:0 2px 12px rgba(0,0,0,0.15);display:none;min-width:180px;">
+        <span id="selectedClassName"></span>
+        <div id="selectedClassYears" style="font-size:0.95em;color:#1bc47d;"></div>
+    </div>
+
+    <script>
+        function handleSearch() {
+            const searchTerm = document.getElementById('searchInput').value.trim();
+            if (!searchTerm) return;
+
+            fetch('/subject-search', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ term: searchTerm })
+            })
+            .then(res => res.json())
+            .then(data => {
+                const resultsDiv = document.getElementById('searchResults');
+                const infoBox = document.getElementById('infoBox');
+                resultsDiv.innerHTML = '';
+                infoBox.innerHTML = '';
+
+                if (data.type === 'job') {
+                    let html = `<div class="results-title">Job: <span class="results-highlight">${data.name}</span></div>`;
+                    if (data.classes.length) {
+                        html += '<div class="results-subtitle">Classes required for this job:</div><ul class="results-list-ul">';
+                        data.classes.forEach(c => {
+                            html += `<li class="results-list-item">
+                                <span class="class-link results-class-name"
+                                      style="cursor:pointer;text-decoration:underline;"
+                                      data-id="${c.id}"
+                                      data-name="${c.name}"
+                                      data-year="${c.year}"
+                                      data-mandatory="${c.is_mandatory}">
+                                    ${c.name}</span>
+                                <span class="results-class-year">(Year ${c.year})</span>
+                                <span class="results-class-status ${c.is_mandatory ? 'mandatory' : 'optional'}">
+                                    ${c.is_mandatory ? 'Mandatory' : 'Optional'}
+                                </span>
+                            </li>`;
+                        });
+                        html += '</ul>';
+                    } else html += '<p class="results-empty">No classes found for this job.</p>';
+                    resultsDiv.innerHTML = html;
+                    infoBox.innerHTML = `<div class="info-box-content">Searching for a job. Click a class name for details.</div>`;
+
+                    document.querySelectorAll('.class-link').forEach(el => {
+                        el.onclick = function () {
+                            const classId = this.getAttribute('data-id');
+                            window.location.href = `/subject/${classId}`;
+                        };
+                    });
+
+                } else if (data.type === 'class') {
+                    let html = `<div class="results-title">Class: <span class="results-highlight">${data.name}</span></div>`;
+                    if (data.jobs.length) {
+                        html += '<div class="results-subtitle">Jobs available with this class:</div><ul class="results-list-ul">';
+                        data.jobs.forEach(j => {
+                            html += `<li class="results-list-item results-job-item">
+                                        <span class="results-class-name" style="cursor:pointer;" onclick="window.location.href='/subject/job/${j.id}'">
+                                        ${j.name}</span>
+                                    </li>`;
+                        });
+                        html += '</ul>';
+                    } else html += '<p class="results-empty">No jobs found for this class.</p>';
+                    resultsDiv.innerHTML = html;
+                    infoBox.innerHTML = `<div class="info-box-content">Searching for a class. Click a job for details.</div>`;
+                } else {
+                    resultsDiv.innerHTML = '<p class="results-empty">No results found.</p>';
+                }
+            });
+        }
+
+        const searchInput = document.getElementById('searchInput');
+        const suggestionsList = document.getElementById('suggestions');
+
+        searchInput.addEventListener('input', function () {
+            const term = this.value.trim();
+            if (!term) {
+                suggestionsList.innerHTML = '';
+                return;
+            }
+            fetch(`/class-suggestions?term=${encodeURIComponent(term)}`)
+                .then(res => res.json())
+                .then(suggestions => {
+                    suggestionsList.innerHTML = '';
+                    suggestions.forEach(s => {
+                        const li = document.createElement('li');
+                        li.textContent = s;
+                        li.onclick = () => {
+                            searchInput.value = s;
+                            suggestionsList.innerHTML = '';
+                            handleSearch();
+                        };
+                        suggestionsList.appendChild(li);
+                    });
+                });
+        });
+
+        document.addEventListener('click', function (e) {
+            if (!suggestionsList.contains(e.target) && e.target !== searchInput) {
+                suggestionsList.innerHTML = '';
+            }
+        });
+    </script>
+</body>
+</html>

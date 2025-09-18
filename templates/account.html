@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+{% block content %}
+<form action="/account" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" accept=".png, .jpg, .webp, .jpeeg, .gif">
+
+    <button type="submit"> go! </button>
+    {% if error %}
+    <p>{{error}}</p>
+    {%endif%}
+</form>
+
+{% endblock %}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body class="admin-bg">
+    <form action="/update-classes" method="post" enctype="multipart/form-data">
+        <label for="file">Upload Classes CSV:</label>
+        <input type="file" name="file" accept=".csv">
+        <button type="submit">Upload Classes</button>
+    </form>
+
+    <form action="/update-jobs" method="post" enctype="multipart/form-data">
+        <label for="file">Upload Jobs CSV:</label>
+        <input type="file" name="file" accept=".csv">
+        <button type="submit">Upload Jobs</button>
+    </form>
+
+    <form action="/add-more-jobs" method="post" enctype="multipart/form-data">
+        <label for="file">Add More Jobs CSV:</label>
+        <input type="file" name="file" accept=".csv">
+        <button type="submit">Add Jobs</button>
+    </form>
+
+    <form action="/job-classes" method="post" enctype="multipart/form-data">
+        <label for="file">Upload Job-Classes CSV:</label>
+        <input type="file" name="file" accept=".csv">
+        <button type="submit">Upload Job-Classes</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Class Name</th>
+                <th>Years</th>
+                <th>Is Mandatory</th>
+                <th>Prerequisites</th>
+                <th>Jobs</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for subject in subjects %}
+            <tr>
+                <td>{{ subject["id"] }}</td>
+                <td>{{ subject["name"] }}</td>
+                <td>{{ subject["year"] }}</td>
+                <td>{% if subject["is_mandatory"] == 0 %}No{% else %}Yes{% endif %}</td>
+                <td>{{ subject["prerequisites"] }}</td>
+                <td class="jobs-td">
+                    {% for job in subject["jobs"] %}
+                    <div class="job_selection">
+                        {{ job[1] }}
+                        <form class="x_form" action="/remove-job-from-class/{{subject['id']}}/{{job[0]}}" method="post">
+                            <button class="x_button" type="submit">x</button>
+                        </form>
+                    </div>
+                    {% endfor %}
+                    <div class="plus_container">
+                        <button id="plus-{{subject['id']}}" class="plus_button">+</button>
+                        <ul id="dropdown-{{subject['id']}}" class="plus_dropdown" style="display:none;">
+                            {% for job in all_jobs %}
+                            {% if job not in subject["jobs"] %}
+                            <li>
+                                <form class="plus_form" action="/add-job-to-class/{{subject['id']}}/{{job[0]}}" method="post">
+                                    <button class="job_button" type="submit">{{ job[1] }}</button>
+                                </form>
+                            </li>
+                            {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const plusButtons = document.querySelectorAll('.plus_button');
+
+            plusButtons.forEach(function (btn) {
+                btn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const id = btn.id.replace('plus-', '');
+                    const dropdown = document.getElementById('dropdown-' + id);
+                    if (dropdown) {
+                        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+                    }
+                });
+            });
+
+            document.addEventListener('click', function (e) {
+                plusButtons.forEach(function (btn) {
+                    const id = btn.id.replace('plus-', '');
+                    const dropdown = document.getElementById('dropdown-' + id);
+                    if (dropdown && dropdown.style.display === 'block') {
+                        if (!btn.contains(e.target) && !dropdown.contains(e.target)) {
+                            dropdown.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

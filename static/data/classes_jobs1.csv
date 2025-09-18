@@ -1,0 +1,11 @@
+id,class Name,years,is_mandatory,prerequisites,jobs
+63,Accounting,12,no,L2 Accounting,Teacher;Data Analyst;Accountant;Scientist
+11,Art,9,no,,Teacher;Graphic Designer;Web Developer
+12,Art,10,no,,Teacher;Graphic Designer;Web Developer
+114,Art,11,no,,Teacher;Graphic Designer;Web Developer
+115,Art,12,no,,Teacher;Graphic Designer;Web Developer
+116,Art,13,no,,Teacher;Graphic Designer;Web Developer
+81,Art History,13,no,,Teacher;Graphic Designer;Web Developer
+59,Biology,12,no,Science,Registered Nurse;Teacher;Pharmacist;Scientist
+87,Biology,13,no,Science,Registered Nurse;Teacher;Pharmacist;Scientist
+75,Calculus,13,no,12 credits in L2 Maths incl. Algebra & Calculus,Software Developer;Registered Nurse;Electrician;Chef;Civil Engineer;Police Officer;Mechanical Engineer

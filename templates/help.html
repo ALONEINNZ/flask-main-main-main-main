@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+{% block content %}
+ <!--this is the search bar-->    
+
+ <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search..." class="search-bar">
+    <button class="search-button" onclick="handleSearch()">Search</button>
+</div>
+
+
+<script>
+function handleSearch() {
+    const searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
+    
+    const searchMap = {
+       
+    };
+    
+    for (const [keyword, url] of Object.entries(searchMap)) {
+        if (searchTerm.includes(keyword)) {
+            window.location.href = url;
+            return;
+        }
+    }
+    
+}
+
+document.getElementById('searchInput').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        handleSearch();
+    }
+});
+</script>
+    </body>
+{% endblock %}

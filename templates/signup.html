@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+{% block content %}
+<form action="/signup" method="post">
+    <label for="username">username</label>
+    <input type="text" name="username">
+
+    <label for="password">password</label>
+    <input type="password" name="password">
+
+
+    <label for="confirm_password"> Confirm Password</label>
+    <input type="password" name="confirm_password">
+
+
+    <label for="email">email</label>
+    <input type="text" name="email">
+
+    <label for="code">code</label>
+    <input type="text" name="code">
+
+    <button type="submit"> go! </button>
+    {% if error %}
+    <p>{{error}}</p>
+    {%endif%}
+</form>
+
+{% endblock %}

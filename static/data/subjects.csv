@@ -1,0 +1,110 @@
+ID,Subject,Level,Compulsory,Prerequisite,Careers
+63,Accounting,12,No,L2 Accounting,Teacher; Accountant
+11,Art,9,No,,Teacher; Graphic Designer; Web Developer
+12,Art,10,No,,Teacher; Graphic Designer; Web Developer
+114,Art,11,No,,Teacher; Graphic Designer; Web Developer
+115,Art,12,No,,Teacher; Graphic Designer; Web Developer
+116,Art,13,No,,Teacher; Graphic Designer; Web Developer
+81,Art History,13,No,,Teacher; Graphic Designer; Web Developer
+59,Biology,12,No,Science,Registered Nurse; Teacher; Pharmacist; Scientist
+87,Biology,13,No,Science,Registered Nurse; Teacher; Pharmacist; Scientist
+75,Calculus,13,No,12 credits in L2 Maths incl. Algebra & Calculus,Software Developer; Registered Nurse; Electrician; Chef; Civil Engineer; Police Officer; Mechanical Engineer
+47,Cambridge Art,11,No,Art Y10 or HOD approval,Teacher; Data Analyst
+50,Cambridge Music,11,No,,Musician; Teacher
+60,Chemistry,12,No,Science,Scientist; Pharmacist; Chemist
+88,Chemistry,13,No,Science,Scientist; Pharmacist; Chemist
+29,Chinese Mandarin,9,No,,Teacher; Translator
+30,Chinese Mandarin,10,No,,Teacher; Translator
+44,Commerce,11,No,,Accountant; Entrepreneur
+65,Contemporary English,12,Yes,12 credits in L2 English,Teacher; Writer; Editor
+51,Contemporary Music,11,No,,Musician; Teacher
+13,Dance,9,No,,Dancer; Choreographer; Teacher
+14,Dance,10,No,,Dancer; Choreographer; Teacher
+48,Dance,11,No,,Dancer; Choreographer; Teacher
+79,Dance,13,No,HOD approval,Dancer; Choreographer; Teacher
+46,Design & Photography,11,No,,Photographer; Graphic Designer; Teacher
+99,Design & Visual Communication,9,No,,Graphic Designer; Illustrator; Teacher
+100,Design & Visual Communication,10,No,,Graphic Designer; Illustrator; Teacher
+101,Design & Visual Communication,11,No,,Graphic Designer; Illustrator; Teacher
+102,Design & Visual Communication,12,No,,Graphic Designer; Illustrator; Teacher
+103,Design & Visual Communication,13,No,,Graphic Designer; Illustrator; Teacher
+19,Design & Visual Communications,9,No,,Graphic Designer; Illustrator; Teacher
+20,Design & Visual Communications,10,No,,Graphic Designer; Illustrator; Teacher
+72,Design & Visual Communications,12,No,,Graphic Designer; Illustrator; Teacher
+21,Digital Technologies,9,No,Mathematics,Software Developer; Data Analyst
+22,Digital Technologies,10,No,Mathematics,Software Developer; Data Analyst
+96,Digital Technologies,11,No,Mathematics,Software Developer; Data Analyst
+97,Digital Technologies,12,No,Mathematics,Software Developer; Data Analyst
+98,Digital Technologies,13,No,Mathematics,Software Developer; Data Analyst
+15,Drama,9,No,,Actor; Director; Teacher
+16,Drama,10,No,,Actor; Director; Teacher
+49,Drama,11,No,,Actor; Director; Teacher
+113,Drama,12,No,,Actor; Director; Teacher
+80,Drama,13,No,,Actor; Director; Teacher
+23,Electronics & Robotics,9,No,,Engineer; Technician; Programmer
+24,Electronics & Robotics,10,No,,Engineer; Technician; Programmer
+52,Electronics & Robotics,11,No,,Engineer; Technician; Programmer
+70,Engineering,12,No,Passed Y12 Engineering or HOD approval,Engineer; Architect
+82,English,9,Yes,,Teacher; Writer; Editor
+2,English,10,Yes,,Teacher; Writer; Editor
+43,English,11,Yes,,Teacher; Writer; Editor
+83,English,12,Yes,,Teacher; Writer; Editor
+84,English,13,Yes,,Teacher; Writer; Editor
+66,Extension English,12,No,"12 credits in L2 English, externals at Merit/Excellence",Teacher; Writer; Editor
+55,Fashion Design Technology,11,No,,Fashion Designer; Textile Artist
+73,Food & Nutrition,12,No,,Dietitian; Chef; Nutritionist
+25,Food Technology,9,No,,Chef; Nutritionist; Food Scientist
+26,Food Technology,10,No,,Chef; Nutritionist; Food Scientist
+53,Food Technology,11,No,,Chef; Nutritionist; Food Scientist
+31,French,9,No,,Teacher; Translator
+32,French,10,No,,Teacher; Translator
+62,General Science,12,No,L2 Science,Scientist; Teacher; Pharmacist
+93,Geography,11,No,,Teacher; Geographer; Urban Planner
+94,Geography,12,No,,Teacher; Geographer; Urban Planner
+95,Geography,13,No,,Teacher; Geographer; Urban Planner
+33,German,9,No,,Teacher; Translator
+34,German,10,No,,Teacher; Translator
+108,Health,9,Yes,,Nurse; Health Educator
+109,Health,10,Yes,,Nurse; Health Educator
+68,Health,12,No,,Nurse; Health Educator
+9,Health & PE,9,Yes,,PE Teacher; Coach
+10,Health & PE,10,Yes,,PE Teacher; Coach
+90,History,11,No,,Teacher; Historian
+91,History,12,No,,Teacher; Historian
+92,History,13,No,,Teacher; Historian
+54,Hospitality Food Studies,11,No,,Chef; Hospitality Manager
+35,Japanese,9,No,,Teacher; Translator
+36,Japanese,10,No,,Teacher; Translator
+3,Mathematics,9,Yes,,Mathematician; Teacher; Data Analyst
+4,Mathematics,10,Yes,,Mathematician; Teacher; Data Analyst
+41,Mathematics,11,Yes,,Mathematician; Teacher; Data Analyst
+85,Mathematics,12,Yes,,Mathematician; Teacher; Data Analyst
+86,Mathematics,13,Yes,,Mathematician; Teacher; Data Analyst
+64,Media Studies,12,No,L2 English,Media Analyst; Journalist
+27,Mixed Materials Technology,9,No,,Engineer; Designer; Technician
+28,Mixed Materials Technology,10,No,,Engineer; Designer; Technician
+17,Music,9,No,,Musician; Teacher
+18,Music,10,No,,Musician; Teacher
+110,Music,11,No,,Musician; Teacher
+111,Music,12,No,,Musician; Teacher
+112,Music,13,No,,Musician; Teacher
+77,Outdoor Education,13,No,,Guide; Trainer
+74,Performance Music,12,No,14 credits in 12MUO/12MUC/12PMU,Musician; Performer
+104,Physical Education,9,No,,PE Teacher; Coach
+105,Physical Education,10,No,,PE Teacher; Coach
+106,Physical Education,11,No,,PE Teacher; Coach
+69,Physical Education,12,No,,PE Teacher; Coach
+107,Physical Education,13,No,,PE Teacher; Coach
+61,Physics,12,No,"Science, Mathematics",Scientist; Engineer
+89,Physics,13,No,"Science, Mathematics",Scientist; Engineer
+57,Practical Computing,11,No,,Software Developer; IT Technician
+58,Product & Digital Design,11,No,,Designer; Product Developer
+5,Science,9,Yes,,Scientist; Teacher
+6,Science,10,Yes,,Scientist; Teacher
+42,Science,11,Yes,,Scientist; Teacher
+7,Social Sciences,9,Yes,,Software Developer; Registered Nurse; Accountant
+8,Social Sciences,10,Yes,,Software Developer; Registered Nurse; Accountant
+56,Software Engineering,11,No,,Software Developer; IT Specialist
+71,Software Engineering & Computer Science,12,No,,Software Developer; IT Specialist
+37,Spanish,9,No,,Teacher; Translator
+38,Spanish |,,,,

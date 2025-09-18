@@ -1,0 +1,102 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search..." class="search-bar">
+    <button class="search-button" onclick="handleSearch()">Search</button>
+    <div id="suggestions"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+
+<script>
+    const pages = [
+        { title: "Technology", url: "/technology" },
+        { title: "Home", url: "/" },
+        { title: "About", url: "/about" },
+        { title: "Help", url: "/help" },
+        { title: "Connect", url: "/connect" },
+        { title: "subject_selection", url: "/subject" },
+        { title: "login", url: "/login" },
+        { title: "google", url: "https://google.com" },
+        { title: "burnside high school", url: "https://burnside.school.nz" },
+        { title: "signup", url: "/signup" },
+        { title: "burnside high school news", url: "/burnside_high_school_news" },
+        { title: "burnside high school events", url: "/burnside_high_school_events" },
+        { title: "burnside high school achievements", url: "/burnside_high_school_achievements" }
+    ];
+
+    const fuse = new Fuse(pages, {
+        keys: ['title'],
+        threshold: 0.4
+    });
+
+ function handleSearch() {
+    const input = document.getElementById("searchInput").value.trim();
+    const results = fuse.search(input);
+
+    if (results.length > 0) {
+        // Redirect to the first best match
+        window.location.href = results[0].item.url;
+    } else {
+        // No results found, redirect to 404 none existant  
+        window.location.href = "/search_doesnt_exist"
+    }
+}
+
+    function showSuggestions() {
+        const input = document.getElementById("searchInput").value;
+        const suggestionsBox = document.getElementById("suggestions");
+        suggestionsBox.innerHTML = '';
+
+        if (input.length === 0) return;
+
+        const results = fuse.search(input);
+        results.slice(0, 5).forEach(result => {
+            const li = document.createElement("li");
+            li.textContent = result.item.title;
+            li.style.cursor = "pointer";
+            li.style.padding = "4px 0";
+            li.onclick = () => window.location.href = result.item.url;
+            suggestionsBox.appendChild(li);
+        });
+    }
+
+    document.getElementById("searchInput").addEventListener("input", showSuggestions);
+    document.getElementById("searchInput").addEventListener("keypress", function (e) {
+        if (e.key === "Enter") {
+            handleSearch();
+        }
+    });
+</script>
+
+<main>
+    <div class="main-content">
+        <h2>Burnside High School</h2>
+        <p>
+            Burnside High School is one of the largest secondary schools in New Zealand, located in the northwestern suburb of Burnside, Christchurch. Founded in 1960, the school serves students from Years 9 to 13 and is known for its academic excellence, cultural diversity, and strong extracurricular programs.
+        </p>
+        <p>
+            Burnside High has a proud tradition of success across various fields, including music, performing arts, sports, and science. Its four divisions—North, South, West, and Senior—help manage its large student population efficiently, while still fostering a sense of community and identity.
+        </p>
+        <p>
+            The school’s facilities include well-equipped classrooms, a performing arts centre, science labs, and extensive sports grounds. It is especially renowned for its music program, with ensembles such as the Burnside High School Orchestra and Big Band receiving national recognition.
+        </p>
+        <p>
+            Burnside High has produced many notable alumni, including musicians, athletes, scientists, and public figures, reflecting the school’s commitment to helping students excel in all areas of life.
+        </p>
+    </div>
+    <div class="page-bg"></div>
+    <div class="main-content">
+        <h2>Latest Updates</h2>
+        <p>
+            <!-- Add more news, links, and updates here. This section will be on a pure black background. -->
+        </p>
+        <p>
+            More info about upcoming events, achievements, and school news will appear here.
+        </p>
+        <!-- Add as much content as you want! -->
+    </div>
+</main>
+
+{% endblock %}

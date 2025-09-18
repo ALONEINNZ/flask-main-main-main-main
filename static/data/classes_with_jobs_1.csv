@@ -1,0 +1,38 @@
+id,class Name,years,is_mandatory,prerequisites,jobs
+63,Accounting,12,no,L2 Accounting,Teacher;Accountant
+11,Art,9,no,,Teacher;Graphic Designer;Web Developer
+12,Art,10,no,,Teacher;Graphic Designer;Web Developer
+114,Art,11,no,,Teacher;Graphic Designer;Web Developer
+115,Art,12,no,,Teacher;Graphic Designer;Web Developer
+116,Art,13,no,,Teacher;Graphic Designer;Web Developer
+81,Art History,13,no,,Teacher;Graphic Designer;Web Developer;Museum Curator;Historian
+59,Biology,12,no,Science,Registered Nurse;Teacher;Pharmacist;Scientist;Biologist
+87,Biology,13,no,Science,Registered Nurse;Teacher;Pharmacist;Scientist;Biologist
+75,Calculus,13,no,12 credits in L2 Maths incl. Algebra & Calculus,Software Developer;Registered Nurse;Electrician;Chef;Civil Engineer;Police Officer;Mechanical Engineer;Data Scientist
+47,Cambridge Art,11,no,Art Y10 or HOD approval,Teacher;Data Analyst;Graphic Designer
+50,Cambridge Music,11,no,,Musician;Composer;Music Teacher
+60,Chemistry,12,no,Science,Chemist;Pharmacist;Teacher;Lab Technician
+88,Chemistry,13,no,Science,Chemist;Pharmacist;Teacher;Lab Technician;Research Scientist
+29,Chinese Mandarin,9,no,,Translator;Interpreter;Teacher;Diplomat
+30,Chinese Mandarin,10,no,,Translator;Interpreter;Teacher;Diplomat
+44,Commerce,11,no,,Accountant;Business Analyst;Entrepreneur
+65,Contemporary English,12,yes,12 credits in L2 English,Writer;Journalist;Teacher;Editor
+51,Contemporary Music,11,no,,Musician;Composer;Performer
+13,Dance,9,no,,Dancer;Choreographer;Performer
+14,Dance,10,no,,Dancer;Choreographer;Performer
+48,Dance,11,no,,Dancer;Choreographer;Performer
+79,Dance,13,no,HOD approval,Dancer;Choreographer;Dance Teacher
+46,Design & Photography,11,no,,Photographer;Graphic Designer;Visual Artist
+99,Design & Visual Communication,9,no,,Architect;Graphic Designer;Industrial Designer
+100,Design & Visual Communication,10,no,,Architect;Graphic Designer;Industrial Designer
+101,Design & Visual Communication,11,no,,Architect;Graphic Designer;Industrial Designer
+102,Design & Visual Communication,12,no,,Architect;Graphic Designer;Industrial Designer
+103,Design & Visual Communication,13,no,,Architect;Graphic Designer;Industrial Designer
+19,Design & Visual Communications,9,no,,Architect;Graphic Designer;Industrial Designer
+20,Design & Visual Communications,10,no,,Architect;Graphic Designer;Industrial Designer
+72,Design & Visual Communications,12,no,,Architect;Graphic Designer;Industrial Designer
+21,Digital Technologies,9,no,Mathematics,Software Developer;IT Specialist;Web Developer
+22,Digital Technologies,10,no,Mathematics,Software Developer;IT Specialist;Web Developer
+96,Digital Technologies,11,no,Mathematics,Software Developer;IT Specialist;Web Developer
+97,Digital Technologies,12,no,Mathematics,Software Developer;IT Specialist;Web Developer
+98,Digital Technologies,13,no,Mathematics,Software Developer;IT Specialist;Web Developer

@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+{% block content %}
+ <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search..." class="search-bar">
+    <button class="search-button" onclick="handleSearch()">Search</button>
+</div>
+
+
+<script>
+function handleSearch() {
+    const searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
+    
+    const searchMap = {
+        'about': '/about',
+        'help': 'pizzas.html',
+        'subject': '/subject',
+        'home': '/',
+        'login': 'login.html',
+        'connect': 'connect.html',
+        'burnside': 'https://www.burnside.school.nz/',
+        'pizza': '/pizza'
+    };
+    
+    for (const [keyword, url] of Object.entries(searchMap)) {
+        if (searchTerm.includes(keyword)) {
+            window.location.href = url;
+            return;
+        }
+    }
+
+    
+}
+
+
+document.getElementById('searchInput').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        handleSearch();
+    }
+});
+</script>
+    </body>
+{% endblock %}

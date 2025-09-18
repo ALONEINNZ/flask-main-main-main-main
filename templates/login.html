@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+{% block content %}
+<form action="/login" method="post">
+    <label for="username">username</label>
+    <input type="text" name="username">
+
+    <label for="password">password</label>
+    <input type="password" name="password">
+    <button type="submit"> go! </button>
+    {% if error %}
+    <p>{{error}}</p>
+    {%endif%}
+</form>
+
+<p>
+    Don't have an account?
+    <a class="signup-link" href="/signup">Sign up</a>
+</p>
+{% endblock %}

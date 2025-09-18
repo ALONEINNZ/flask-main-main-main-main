@@ -1,0 +1,29 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+.venv/
+.env/
+instance/
+.env
+
+# Flask specific
+*.log
+.env
+*.sqlite
+
+# OS or Editor files
+.DS_Store
+*.swp
+*.swo
+.vscode/
+
+# Packages
+node_modules/
+
+
+emailhush.json
